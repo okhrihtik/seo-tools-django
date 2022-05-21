@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}contact{% endblock title %}
+
+{% block body %}
+<div class = "container">
+<h1 class="pt-4 mt-lg-3 pb-3 pb-lg-4">Contact Us</h1>
+
+<div class="row pb-5 mb-md-2 mb-lg-4 mb-xl-5">
+    <!-- Contact details -->
+    <div class="col-xl-5 col-md-6 mb-4 mb-md-0">
+      <div class="card card-hover mb-3">
+        <div class="card-body d-flex align-items-start">
+          <i class="bx bx-envelope fs-3 bg-secondary text-primary d-inline-block rounded-circle p-3"></i>
+          <div class="ps-4">
+            <h3 class="h4 pb-1 mb-2">Email us</h3>
+            <p class="pb-1 mb-2">Please feel free to drop us a line. We will respond as soon as possible.</p>
+            <a href="mailto:silicon@example.com" class="btn btn-link stretched-link fs-base px-0">
+              Leave a message
+              <i class="bx bx-right-arrow-alt fs-4 ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card card-hover mb-3">
+        <div class="card-body d-flex align-items-start">
+          <i class="bx bx-phone-call fs-3 bg-secondary text-primary d-inline-block rounded-circle p-3"></i>
+          <div class="ps-4">
+            <h3 class="h4 pb-1 mb-2">Call any time</h3>
+            <p class="pb-1 mb-2">If you need immediate assistance feel free to call us any time.</p>
+            <a href="tel:4065550120" class="btn btn-link stretched-link fs-base px-0">(406) 555-0120</a>
+          </div>
+        </div>
+      </div>
+      <div class="card card-hover">
+        <div class="card-body d-flex align-items-start">
+          <i class="bx bx-map fs-3 bg-secondary text-primary d-inline-block rounded-circle p-3"></i>
+          <div class="ps-4">
+            <h3 class="h4 pb-1 mb-2">Visit us</h3>
+            <p class="pb-1 mb-2">1904 3rd Ave, Seattle, WA 98101, United States, United Sates</p>
+            <a href="#" class="btn btn-link stretched-link fs-base px-0">
+              Get directions
+              <i class="bx bx-right-arrow-alt fs-4 ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="col-md-6 offset-xl-1">
+      <div class="d-flex flex-column h-100 shadow-sm rounded-3 overflow-hidden">
+        <iframe class="d-block h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19629.434226530317!2d-122.33888855763911!3d47.61247058317426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490154caee44595%3A0xc262d2caa19b903a!2s1904%203rd%20Ave%2C%20Seattle%2C%20WA%2098101%2C%20USA!5e0!3m2!1sen!2sua!4v1636380604362!5m2!1sen!2sua" style="border: 0; min-height: 300px;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+</div>
+<h1 class="pt-4 mt-lg-3 pb-3 pb-lg-4">Contact form </h1>
+<div class = "container">
+{% comment %} <div class="bg-secondary rounded-3 py-5 px-3 px-sm-0 mb-xl-4"> {% endcomment %}
+    <form methord= "post" action = "/contact">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name " placeholder="enter your name ">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="enter your E-mail">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="text" class="form-control" id="phone" name = "phone" placeholder="enter your E-mail">
+        </div>
+
+        <div class="form-group">
+          <label for="desc">Tell me about what you want to contact me for ...</label>
+          <textarea class="form-control" id="desc" name = "desc" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type = "submit">Submit</button>
+      </form>
+</div>
+
+</div>
+
+
+
+{% endblock body %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}tools{% endblock title %}
+
+{% block body %}
+this is tools body
+
+<form methord="post" action = "/tools1">
+    {% csrf_token %}
+    Name = <input type="text" name="name">
+    <button type="submit">submit</button>
+</form>
+<b>{{ out }}</b>
+
+{% endblock body %}
